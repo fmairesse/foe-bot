@@ -8,8 +8,6 @@ import time
 # 3rd-Party
 
 #
-from request import Request
-from models.model import Model
 
 
 class TreasureChest(object):

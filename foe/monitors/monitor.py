@@ -3,10 +3,8 @@
 """
 
 # Native
-import random
 import time
 import curses
-from curses import wrapper
 
 # # 3rd-Party
 

@@ -2,14 +2,10 @@
 """
 
 # Native
-import random
 import time
-import uuid
 import curses
-from curses import wrapper
 
 # # 3rd-Party
-import pydash
 import moment
 
 # # Proprietary

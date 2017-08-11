@@ -4,12 +4,10 @@
 
 # Native
 import time
-import json
 import pprint
 
 # 3rd-Party
-from sqlalchemy import Table, Column, ForeignKey, Integer, String, Boolean, Float
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float
 
 #
 from request import Request

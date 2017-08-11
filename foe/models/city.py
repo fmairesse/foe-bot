@@ -4,23 +4,15 @@
 
 # Native
 import time
-import pprint
-import json
 import random
-from collections import OrderedDict
 
 # 3rd-Party
-from sqlalchemy import Table, Column, ForeignKey, Integer, String, Boolean, Float
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship, backref
 
-import pydash
-
 # Proprietary
-from request import Request
 from models.model import Model
 from models.building import Building
-from models.tavern import Tavern
-from models.player import Player
 
 
 class City(Model):

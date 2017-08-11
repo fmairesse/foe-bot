@@ -5,8 +5,7 @@
 # Native
 
 # 3rd-Party
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 #
 from request import Request

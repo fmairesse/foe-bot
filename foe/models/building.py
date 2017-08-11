@@ -7,13 +7,10 @@ import time
 import pprint
 
 # 3rd-Party
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 
 #
-from request import Request
 from models.model import Model
-#from models.building_state import BuildingState
 
 
 
