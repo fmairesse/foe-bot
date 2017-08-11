@@ -3,6 +3,7 @@
 """
 
 # Native
+import datetime
 import time
 import random
 
@@ -23,18 +24,19 @@ account = Account()
 
 session.add(account)
 
-count = 0
-
-refresh = random.randrange(config['settings']['update']['min'], config['settings']['update']['max'])
+update_period = config['settings']['update']
+do_refresh = True
+last_update = 0
 
 while True:
 
-    if not count or count >= refresh:
+    if do_refresh:
+        print "----------------------------------------------------"
+        print "%s" % datetime.datetime.today()
         account.fetch()
         session.commit()
 
         #break
-
         print "Players: %s" % (len(account.players))
 
         print "Buildings: %s" % (len(account.city.buildings))
@@ -55,9 +57,10 @@ while True:
 
         session.commit()
 
-        refresh = count + random.randrange(config['settings']['update']['min'], config['settings']['update']['max'])
+        last_update = time.time()
+        do_refresh = False
 
-    print "Checking... (%s)" % (count)
+    print "Checking... (%d)" % (update_period - (time.time() - last_update))
     # NOTE: The full update should adjust for any coins/supplies/resources gained from these pickups
     account.city.pickup()
 
@@ -69,4 +72,4 @@ while True:
 
     time.sleep(sleep)
 
-    count += sleep
+    do_refresh = time.time() - last_update > update_period
