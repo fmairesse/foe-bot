@@ -127,10 +127,9 @@ class City(Model):
         """
 
         for building in self.buildings:
-            # Add a built of time so it looks like a human ;)
-            sleep = random.uniform(0.5, 2)
-            time.sleep(sleep)
-
-            building.produce()
+            if building.produce() is not None:
+                # Add a built of time so it looks like a human ;)
+                sleep = random.uniform(0.5, 2)
+                time.sleep(sleep)
 
         return self
